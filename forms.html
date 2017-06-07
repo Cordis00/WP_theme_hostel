@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>gulp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="mainwrapper">
+        <div class="forms-page">
+            <div class="forms-page__wrap">
+
+                <h1 class="forms-page__title">Форма бронирования</h1>
+
+                <form action="js">
+                    <div class="form-block">
+
+
+                        <div class="form-block__wrap">
+                            <div class="form-block__block form-block__block_margin-mobile">
+                                <div class="form-block__input js-input-focus">
+                                    <span class="form-block__label">Дата заезда</span>
+                                    <div class="form-block__input-wrap">
+                                        <input type="text" class="form-block__field js-datapicker">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-block__block form-block__block_margin-mobile">
+                                <div class="form-block__input js-input-focus">
+                                    <span class="form-block__label">Дата выезда</span>
+                                    <div class="form-block__input-wrap">
+                                        <input type="text" class="form-block__field js-datapicker">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="js-number-part">
+                            <div class="js-clone-part">
+                                <div class="nc-number js-nc-number">
+                                    <p class="nc-number__left">Номер <span>1</span></p>
+                                </div>
+                                <div class="form-block__wrap">
+                                    <div class="form-block__block">
+                                        <select class="chosen-select" data-placeholder="Добавить взрослых">
+                                            <option></option>
+                                            <option value="">1 взрослый</option>
+                                            <option value="">2 взрослых</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-block__block">
+                                        <div class="js-childrens">
+                                            <div class="js-clone-sl">
+                                                <select class="chosen-select js-sm-select js-select-active" data-placeholder="Добавить детей">
+                                                    <option></option>
+                                                    <option value="Ребёнок 1 год">Ребёнок 1 год</option>
+                                                    <option value="Ребёнок 2 года">Ребёнок 2 года</option>
+                                                    <option value="Ребёнок 3 года">Ребёнок 3 года</option>
+                                                    <option value="Ребёнок 4 года">Ребёнок 4 года</option>
+                                                    <option value="Ребёнок 5 лет">Ребёнок 5 лет</option>
+                                                    <option value="Ребёнок 6 лет">Ребёнок 6 лет</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="js-clone-part-wrap"></div>
+                        </div>
+
+                        <div class="form-block__wrap form-block__wrap_smart-margin">
+                            <div class="form-block__block form-block__block_mobile-center">
+                                <a href="" class="add-hotel-number js-add-number"><span>Нужен еще один номер</span></a>
+                            </div>
+                        </div>
+
+                        <div class="form-block__button-wrap">
+                            <button type="submit" class="form-block__submit">Найти номера</button>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/libs.min.js"></script>
+</body>
+
+</html>
