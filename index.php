@@ -4,7 +4,7 @@
 <div class="header-form">
     <div class="header-form__wrap">
         <div class="header-form__left">
-            <img src="img/header-form__image.png" alt="" class="header-form__image">
+            <img src="<?php echo get_template_directory_uri() ?> /img/header-form__image.png" alt="" class="header-form__image">
         </div>
         <div class="header-form__right">
             <div class="form-main">
@@ -46,51 +46,31 @@
 
 <!--block-circle-->
 <div class="circles">
-    <div class="circles__wrap">
-        <!--circless-cell-->
-        <div class="circles__cell">
-            <figure class="circles__figure">
-                <img src="img/circles__img_1.png" class="circles__img" alt="">
-            </figure>
-            <b class="circles__title">Любовь к гостям</b>
-            <p class="circles__text">
-                Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них
-            </p>
-        </div>
-        <!--circless-cell-->
+    <!-- <div class="circles__wrap">
+      <div class="circles__cell">
+          <figure class="circles__figure">
+              <img src="img/circles__img_1.png" class="circles__img" alt="">
+          </figure>
+          <b class="circles__title">Любовь к гостям</b>
+          <p class="circles__text">
+              Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них
+          </p>
+      </div> -->
+        <?php if ( have_posts() ) : ?>
+          <?php while ( have_posts() ) : the_post(); ?>
+            <div class="circles__cell">
+                <figure class="circles__figure">
+                    <?php the_post_thumbnail(); ?>
+                </figure>
+                <b class="circles__title"> <?php the_title(); ?> </b>
+                <p class="circles__text">
+                    <?php the_content(); ?>
+                </p>
+            </div>
+          <?php endwhile; ?>
+        <?php endif; ?>
 
 
-        <!--circless-cell-->
-        <div class="circles__cell">
-            <figure class="circles__figure">
-                <img src="img/circles__img_2.png" class="circles__img" alt="">
-            </figure>
-            <b class="circles__title">Нам доверяют</b>
-            <p class="circles__text">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-        </div>
-        <!--circless-cell-->
-
-        <!--circless-cell-->
-        <div class="circles__cell">
-            <figure class="circles__figure">
-                <img src="img/circles__img_3.png" class="circles__img" alt="">
-            </figure>
-            <b class="circles__title">Отдых с детьми</b>
-            <p class="circles__text">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-        </div>
-        <!--circless-cell-->
-
-        <!--circless-cell-->
-        <div class="circles__cell">
-            <figure class="circles__figure">
-                <img src="img/circles__img_4.png" class="circles__img" alt="">
-            </figure>
-            <b class="circles__title">Услуги гостиницы</b>
-            <p class="circles__text">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-        </div>
-        <!--circless-cell-->
-
-    </div>
 </div>
 <!--block-circle-->
 </div>
@@ -102,7 +82,7 @@
     <div class="comments__wrap">
         <!--left img-->
         <figure class="comments__image">
-            <img src="img/comments__img.png" alt="" class="comments__img">
+            <img src="<?php echo get_template_directory_uri() ?> /img/comments__img.png" alt="" class="comments__img">
             <figcaption class="comments__caption">Бесплатный <br>трансфер</figcaption>
         </figure>
         <!--left img-->
@@ -157,7 +137,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c1.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c1.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Кафе в здании</b>
@@ -173,7 +153,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c2.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c2.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Бар на улице</b>
@@ -189,7 +169,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c3.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c3.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text"></b>
@@ -205,7 +185,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c4.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c4.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Бассейн</b>
@@ -221,7 +201,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c5.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c5.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Детская площадка</b>
@@ -237,7 +217,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c6.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c6.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Солевая комната</b>
@@ -253,7 +233,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c7.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c7.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Гидроцикл, водные велосипеды, лодки, квадрациклы</b>
@@ -269,7 +249,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c8.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c8.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Трансфер - 11 местный мимнивэн</b>
@@ -285,7 +265,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c9.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c9.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Уличные беседки</b>
@@ -301,7 +281,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c10.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c10.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Уличный кинотеатр</b>
@@ -317,7 +297,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c11.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c11.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Смотровая площадка перед гостиницей</b>
@@ -333,7 +313,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c12.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c12.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Велосипеды</b>
@@ -349,7 +329,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c13.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c13.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Круглогодичный режим работы</b>
@@ -365,7 +345,7 @@
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="img/c14.png" class="cube__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/c14.png" class="cube__image" alt="">
                 </div>
                 <span class="cube__text-wrap">
                     <b class="cube__text">Оборудованный пляж - зонтики, лежаки</b>
@@ -397,7 +377,7 @@
         <div class="b-preview__cell">
             <div class="image-post">
                 <figure class="image-post__figure">
-                    <img src="img/demo/1.png" class="image-post__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/demo/1.png" class="image-post__image" alt="">
                 </figure>
                 <div class="image-post__wrap">
                     <b class="image-post__title">Люкс</b>
@@ -412,7 +392,7 @@
         <div class="b-preview__cell">
             <div class="image-post">
                 <figure class="image-post__figure image-post__figure_mask2">
-                    <img src="img/demo/2.png" class="image-post__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/demo/2.png" class="image-post__image" alt="">
                 </figure>
                 <div class="image-post__wrap">
                     <b class="image-post__title">Стандарт</b>
@@ -427,7 +407,7 @@
         <div class="b-preview__cell">
             <div class="image-post">
                 <figure class="image-post__figure image-post__figure_mask3">
-                    <img src="img/demo/3.png" class="image-post__image" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?> /img/demo/3.png" class="image-post__image" alt="">
                 </figure>
                 <div class="image-post__wrap">
                     <b class="image-post__title">Эконом</b>

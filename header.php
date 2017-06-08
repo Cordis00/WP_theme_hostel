@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="utf-8">
     <title>gulp</title>
@@ -15,21 +14,23 @@
             <!--header-->
             <div class="header">
                 <div class="header__wrap">
-                    <a href="" class="header__logo">
-                        <?php the_custom_logo(); ?>
-                    </a>
-                    <nav class="header__nav">
-                        <div class="header__nav-size">
-                            <a href="" class="header__nav-link">О Гостинице </a>
-                            <a href="" class="header__nav-link">Номера и цены</a>
-                            <a href="" class="header__nav-link">Фотогалерея</a>
-                            <a href="" class="header__nav-link">Услуги</a>
-                            <a href="" class="header__nav-link">Как проехать</a>
-                        </div>
-                    </nav>
+                    <!-- <a href="#" class="header__logo">
 
+                    </a> -->
+                    <?php the_custom_logo(); ?>
+                    <nav class="header__nav">
+                      <?php
+                        wp_nav_menu(array(
+                          'theme_location' => 'primary',
+                          'items_wrap' => '<div id="%1$s" class="%2$s">%3$s</div>',
+                          'menu_class' => 'header__nav-size',
+                          'menu_id' => '',
+                          'depth' => 1
+                        ));
+                       ?>
+                    </nav>
                     <div class="header__right">
-                        <a href="tel:79221551555" class="header__phone">+7 922 155-155-5 </a>
+                        <a href="tel:79221551555" class="header__phone"><?php echo get_theme_mod('header_products'); ?></a>
                         <a href="javascript:openmodal('consult');" class="header__button"><span>Задать вопрос</span></a>
                     </div>
 

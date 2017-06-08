@@ -33,7 +33,7 @@
                 <div class="captcha">
                     <div class="captcha__left">
                         <span class="captcha__label">Защита от СПАМа</span>
-                        <img src="img/demo/rectangle-1.jpg" alt="" class="captcha__image">
+                        <img src="<?php echo get_template_directory_uri() ?> /img/demo/rectangle-1.jpg" alt="" class="captcha__image">
                     </div>
                     <div class="captcha__right">
                         <span class="captcha__label">Введите код с картинки</span>
@@ -51,7 +51,7 @@
 </div>
 
 </div>
-<?php wp_footer(); ?>
 </body>
+<?php wp_footer(); ?>
 
 </html>
