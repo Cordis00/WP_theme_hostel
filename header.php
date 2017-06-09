@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <title>gulp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<?php wp_head(); ?>
+    <?php wp_enqueue_script("jquery"); ?>
+
+    <?php wp_head(); ?>
+    <script type="text/javascript"
+    src="<?php bloginfo("template_url"); ?>/js/libs.min.js"></script>
 </head>
 
 <body>

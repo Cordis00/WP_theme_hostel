@@ -43,35 +43,25 @@
 </div>
 <!--header-form-->
 
-
 <!--block-circle-->
 <div class="circles">
-    <!-- <div class="circles__wrap">
-      <div class="circles__cell">
-          <figure class="circles__figure">
-              <img src="img/circles__img_1.png" class="circles__img" alt="">
-          </figure>
-          <b class="circles__title">Любовь к гостям</b>
-          <p class="circles__text">
-              Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них
-          </p>
-      </div> -->
-        <?php if ( have_posts() ) : ?>
-          <?php while ( have_posts() ) : the_post(); ?>
-            <div class="circles__cell">
-                <figure class="circles__figure">
-                    <?php the_post_thumbnail(); ?>
-                </figure>
-                <b class="circles__title"> <?php the_title(); ?> </b>
-                <p class="circles__text">
-                    <?php the_content(); ?>
-                </p>
-            </div>
-          <?php endwhile; ?>
-        <?php endif; ?>
-
-
-</div>
+  <div class="circles__wrap">
+   <?php if ( have_posts() ) :
+     query_posts('cat=3');
+       while ( have_posts() ) : the_post(); ?>
+        <div class="circles__cell">
+           <figure class="circles__figure">
+             <?php the_post_thumbnail(); ?>
+           </figure>
+           <b class="circles__title"> <?php the_title(); ?> </b>
+           <p class="circles__text">
+             <?php the_content(); ?>
+           </p>
+        </div>
+       <?php endwhile; ?>
+     <?php endif; ?>
+   <?php wp_reset_query(); ?>
+ </div>
 <!--block-circle-->
 </div>
 
@@ -95,31 +85,19 @@
 
                 <!--slider-->
                 <div class="js-comment-slider">
-                    <!--comment-->
-                    <div class="comment">
-                        <p class="comment__text">Отдыхали летом с маленьким ребенком - все очень понравилось! Вкусная еда, удобные номера, внимательный и вежливый персонал. Удобный заход к морю. До этого несколько лет подряд отдыхали в других гостиницах на Азовском
-                            побережье и все время было что-то не то. Теперь мы нашли идеальный вариант для нашей семьи! Вернемся сюда в следующем году!</p>
-                        <b class="comment__author">Светлана и Игорь</b>
-                    </div>
-                    <!--comment-->
-
-                    <!--comment-->
-                    <div class="comment">
-                        <p class="comment__text">Отдыхали летом с маленьким ребенком - все очень понравилось! Вкусная еда, удобные номера, внимательный и вежливый персонал. Удобный заход к морю. До этого несколько лет подряд отдыхали в других гостиницах на Азовском
-                            побережье и все время было что-то не то. Теперь мы нашли идеальный вариант для нашей семьи! Вернемся сюда в следующем году!</p>
-                        <b class="comment__author">Светлана и Игорь</b>
-                    </div>
-                    <!--comment-->
-
-                    <!--comment-->
-                    <div class="comment">
-                        <p class="comment__text">Отдыхали летом с маленьким ребенком - все очень понравилось! Вкусная еда, удобные номера, внимательный и вежливый персонал. Удобный заход к морю. До этого несколько лет подряд отдыхали в других гостиницах на Азовском
-                            побережье и все время было что-то не то. Теперь мы нашли идеальный вариант для нашей семьи! Вернемся сюда в следующем году!</p>
-                        <b class="comment__author">Светлана и Игорь</b>
-                    </div>
-                    <!--comment-->
+                    <?php if ( have_posts() ) :
+                      query_posts('cat=4');
+                        while ( have_posts() ) : the_post(); ?>
+                        <div class="comment">
+                          <p class="comment__text"><?php the_content(); ?></p>
+                          <b class="comment__author"><?php the_title(); ?></b>
+                        </div>
+                      <?php endwhile; ?>
+                    <?php endif; ?>
+                  <?php wp_reset_query(); ?>
                 </div>
                 <!--slider-->
+
             </div>
         </div>
         <!--comments-slider-->
@@ -132,233 +110,27 @@
 <!--cubes-->
 <div class="cubes">
     <div class="cubes__wrap">
-
         <!--cube-->
+        <?php if ( have_posts() ) :
+          query_posts('cat=5');
+            while ( have_posts() ) : the_post(); ?>
         <a href="" class="cube">
             <div class="cube__visible">
                 <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c1.png" class="cube__image" alt="">
+                    <?php the_post_thumbnail(); ?>
                 </div>
                 <span class="cube__text-wrap">
-                    <b class="cube__text">Кафе в здании</b>
+                    <b class="cube__text"> <?php the_title(); ?> </b>
                 </span>
             </div>
             <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
+                <p class="cube__caption"> <?php the_content(); ?> </p>
             </div>
         </a>
+            <?php endwhile; ?>
+          <?php endif; ?>
+        <?php wp_reset_query(); ?>
         <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c2.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Бар на улице</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c3.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text"></b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c4.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Бассейн</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c5.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Детская площадка</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c6.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Солевая комната</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c7.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Гидроцикл, водные велосипеды, лодки, квадрациклы</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c8.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Трансфер - 11 местный мимнивэн</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c9.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Уличные беседки</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c10.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Уличный кинотеатр</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c11.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Смотровая площадка перед гостиницей</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c12.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Велосипеды</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c13.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Круглогодичный режим работы</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-        <!--cube-->
-        <a href="" class="cube">
-            <div class="cube__visible">
-                <div class="cube__figure">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/c14.png" class="cube__image" alt="">
-                </div>
-                <span class="cube__text-wrap">
-                    <b class="cube__text">Оборудованный пляж - зонтики, лежаки</b>
-                </span>
-            </div>
-            <div class="cube__hidden">
-                <p class="cube__caption">Наш уютный отель на Азовском побережье отмечен 3 звёздами, и мы делаем всё, чтобы оправдать каждую из них</p>
-            </div>
-        </a>
-        <!--cube-->
-
-
-
     </div>
 </div>
 <!--cubes-->
@@ -369,12 +141,12 @@
     <div class="b-preview__wrap">
 
         <div class="b-title">
-            <h2 class="b-title__title">Открытие летнего сезона 2017</h2>
-            <p class="b-title__caption">Приглашаем наших дорогих гостей в наши номера</p>
+            <h2 class="b-title__title"><?php echo get_theme_mod('caption'); ?></h2>
+            <p class="b-title__caption"><?php echo get_theme_mod('invitation'); ?></p>
         </div>
 
         <!--cell-->
-        <div class="b-preview__cell">
+        <!-- <div class="b-preview__cell">
             <div class="image-post">
                 <figure class="image-post__figure">
                     <img src="<?php echo get_template_directory_uri() ?> /img/demo/1.png" class="image-post__image" alt="">
@@ -385,39 +157,25 @@
                     <span class="image-post__price">8 900 р.</span>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--cell-->
-
-        <!--cell-->
-        <div class="b-preview__cell">
-            <div class="image-post">
-                <figure class="image-post__figure image-post__figure_mask2">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/demo/2.png" class="image-post__image" alt="">
-                </figure>
-                <div class="image-post__wrap">
-                    <b class="image-post__title">Стандарт</b>
-                    <p class="image-post__text">До этого несколько лет подряд отдыхали в других гостиницах на Азовском побережье и все время было что-то не то.</p>
-                    <span class="image-post__price">4 500 р.</span>
-                </div>
-            </div>
-        </div>
-        <!--cell-->
-
-        <!--cell-->
-        <div class="b-preview__cell">
-            <div class="image-post">
-                <figure class="image-post__figure image-post__figure_mask3">
-                    <img src="<?php echo get_template_directory_uri() ?> /img/demo/3.png" class="image-post__image" alt="">
-                </figure>
-                <div class="image-post__wrap">
-                    <b class="image-post__title">Эконом</b>
-                    <p class="image-post__text">До этого несколько лет подряд отдыхали в других гостиницах на Азовском побережье и все время было что-то не то. </p>
-                    <span class="image-post__price">3 400 р.</span>
-                </div>
-            </div>
-        </div>
-        <!--cell-->
-
+        <?php if ( have_posts() ) :
+          query_posts('cat=6');
+            while ( have_posts() ) : the_post(); ?>
+            <div class="b-preview__cell">
+                <div class="image-post">
+                    <figure class="image-post__figure">
+                      <?php the_post_thumbnail(poster); ?>
+                    </figure>
+                    <div class="image-post__wrap">
+                        <b class="image-post__title"><?php the_title(); ?></b>
+                        <p class="image-post__text"><?php the_content(); ?></p>
+                    </div>
+               </div>
+          </div>
+          <?php endwhile; ?>
+        <?php endif; ?>
+      <?php wp_reset_query(); ?>
     </div>
 </div>
 <!--rooms-->

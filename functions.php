@@ -39,34 +39,67 @@ function wpHostel_scripts() {
 
 	wp_enqueue_style( 'style-css', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'jquery');
-	wp_enqueue_script( 'libs', get_template_directory_uri() . '/js/libs.min.js');
+  wp_deregister_script('jquery');
 
+  wp_register_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js", false, '1.12.2');
+  wp_enqueue_script('jquery');
 }
 add_action( 'wp_enqueue_scripts', 'wpHostel_scripts' );
 
 
 function wpHostel_customize_register( $wp_customize ) {
 
-	$wp_customize->add_setting( 'header_products' , array(
+	$wp_customize->add_setting( 'header_number' , array(
     'default'   => __('+7 922 155-155-5', 'wpHostel'),
     'transport' => 'refresh',
 	));
+  $wp_customize->add_setting( 'caption' , array(
+    'default'   => __('Открытие летнего сезона 201', 'wpHostel'),
+    'transport' => 'refresh',
+	));
+  $wp_customize->add_setting( 'invitation' , array(
+    'default'   => __('Приглашаем наших дорогих гостей в наши номер', 'wpHostel'),
+    'transport' => 'refresh',
+	));
 
-	$wp_customize->add_section( 'products_section' , array(
+	$wp_customize->add_section( 'number' , array(
     'title'      => __('Номер телефона', 'wpHostel'),
+    'priority'   => 30,
+	));
+  $wp_customize->add_section( 'poster' , array(
+    'title'      => __('Афиша', 'wpHostel'),
     'priority'   => 30,
 	));
 
 	$wp_customize->add_control(
-	'header_products',
+	'header_number',
 	array(
 		'label'    => __( 'Введите номер телефона:', 'wpHostel'),
-		'section'  => 'products_section',
-		'settings' => 'header_products',
+		'section'  => 'number',
+		'settings' => 'header_number',
+		'type'     => 'text',
+	));
+  $wp_customize->add_control(
+	'caption',
+	array(
+		'label'    => __( 'Заголовок', 'wpHostel'),
+		'section'  => 'poster',
+		'settings' => 'caption',
+		'type'     => 'text',
+	));
+  $wp_customize->add_control(
+	'invitation',
+	array(
+		'label'    => __( 'Приглашение', 'wpHostel'),
+		'section'  => 'poster',
+		'settings' => 'invitation',
 		'type'     => 'text',
 	));
 }
 add_action( 'customize_register', 'wpHostel_customize_register' );
 
 add_image_size( 'custom-thumbnail', 250, 170, true );
+add_image_size( 'poster', 326, 326, true );
+
+remove_filter('the_content', 'wpautop');
+remove_filter('the_custom_logo', 'wpautop');
