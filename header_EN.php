@@ -20,7 +20,7 @@
                     <nav class="header__nav">
                       <?php
                         wp_nav_menu(array(
-                          'theme_location' => 'primary',
+                          'theme_location' => 'primary_en',
                           'items_wrap' => '<div id="%1$s" class="%2$s">%3$s</div>',
                           'menu_class' => 'header__nav-size',
                           'menu_id' => '',
@@ -29,7 +29,6 @@
                        ?>
                     </nav>
                     <div class="header__right">
-                        <!-- <span class="language"><a href="index.php">RU</a><a href="/wpHostel/index_EN.php">EN</a></span> -->
                         <?php
                           wp_nav_menu(array(
                             'theme_location' => 'language',
@@ -39,7 +38,7 @@
                             'depth' => 1
                           ));
                          ?>
-                        <a href="javascript:openmodal('consult');" class="header__button"><span>Задать вопрос</span></a>
+                        <a href="javascript:openmodal('consult');" class="header__button"><span>Ask a Question</span></a>
                         <a href="tel:79221551555" class="header__phone"><?php echo get_theme_mod('header_products'); ?></a>
                     </div>
 

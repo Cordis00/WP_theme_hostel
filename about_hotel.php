@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: about_hotel
+*/
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
