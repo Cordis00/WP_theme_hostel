@@ -39,7 +39,7 @@
                             'depth' => 1
                           ));
                          ?>
-                        <a href="javascript:openmodal('consult');" class="header__button"><span>Задать вопрос</span></a>
+                        <a href="javascript:openmodal('consult');" class="header__button"><span><?php pll_e('Submit'); ?></span></a>
                         <a href="tel:79221551555" class="header__phone"><?php echo get_theme_mod('header_products'); ?></a>
                     </div>
 

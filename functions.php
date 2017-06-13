@@ -36,7 +36,6 @@ function wpHostel_setup() {
 	));
 
   register_nav_menu('primary', 'Primary menu');
-  register_nav_menu('primary_en', 'Primary menu EN');
   register_nav_menu('language', 'Language menu');
 }
 
@@ -199,3 +198,17 @@ add_image_size( 'poster', 326, 326, true );
 
 remove_filter('the_content', 'wpautop');
 remove_filter('the_custom_logo', 'wpautop');
+
+
+pll_register_string('transfer', 'Free_transport');
+pll_register_string('feedbacks', 'Comments');
+pll_register_string('submit', 'Submit');
+pll_register_string('sidebar_header', 'Reservation');
+pll_register_string('sidebar_caption', 'Description');
+pll_register_string('sidebar_data_on', 'Data_on');
+pll_register_string('sidebar_data_off', 'Data_off');
+pll_register_string('sidebar_amount', 'Guest_amount');
+pll_register_string('sidebar_reservation_btn', 'Reservation_btn');
+pll_register_string('sidebar_under', 'Sidebar_under');
+pll_register_string('poster_header', 'Poster_header');
+pll_register_string('poster_description', 'Poster_description');
