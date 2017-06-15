@@ -203,6 +203,7 @@ remove_filter('the_custom_logo', 'wpautop');
 pll_register_string('transfer', 'Free_transport');
 pll_register_string('feedbacks', 'Comments');
 pll_register_string('submit', 'Submit');
+// _______________SIDEBAR________________________________
 pll_register_string('sidebar_header', 'Reservation');
 pll_register_string('sidebar_caption', 'Description');
 pll_register_string('sidebar_data_on', 'Data_on');
@@ -210,5 +211,13 @@ pll_register_string('sidebar_data_off', 'Data_off');
 pll_register_string('sidebar_amount', 'Guest_amount');
 pll_register_string('sidebar_reservation_btn', 'Reservation_btn');
 pll_register_string('sidebar_under', 'Sidebar_under');
+// _______________POSTER______________________________________
 pll_register_string('poster_header', 'Poster_header');
 pll_register_string('poster_description', 'Poster_description');
+// _________________FORM___________________________________________
+pll_register_string('form_header', 'Form_header');
+pll_register_string('form_name', 'Form_name');
+pll_register_string('form_messenger', 'Form_messenger');
+pll_register_string('form_spam', 'Form_spam');
+pll_register_string('form_code', 'Form_code');
+pll_register_string('form_btn', 'Form_btn');
